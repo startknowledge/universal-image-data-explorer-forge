@@ -1,111 +1,321 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- ============================================
+       HOMEPAGE — Highest Priority
+       ============================================ -->
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
+
+  <!-- ============================================
+       MAIN TOOL PAGES
+       ============================================ -->
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/index.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/how-to-use.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/advanced-universal-image-data-explorer-forge.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/about.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/ai-trends-2026.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/documentation.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/best-universal-image-data-explorer-forge-tools.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/additional.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/e-e-a-t-signals.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/faq.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/google-updates.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/support.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/honeywell-forge-now-integrates-universal-weather-and-aviation-services.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/contact.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/how-to-universal-image-data-explorer-forge.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/changelog.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.65</priority>
   </url>
+
+  <!-- ============================================
+       LEGAL / POLICY PAGES
+       ============================================ -->
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/mcp-openai-agents-sdk-how-to-build-a-powerful-ai-agent.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/privacy.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/multi-language-seo.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/terms.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/programmatic-seo.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/disclaimer.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/semantic-search.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/cookies.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.50</priority>
   </url>
+
+  <!-- ============================================
+       BLOG — Index
+       ============================================ -->
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/universal-image-data-explorer-forge-for-beginners.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/universal-image-data-explorer-forge-strategies.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/index.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
   </url>
+
+  <!-- ============================================
+       BLOG — Image Forge Specific Posts
+       ============================================ -->
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/universal-image-data-explorer-forge-trends-2026.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/how-to-universal-image-data-explorer-forge.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/blog/vintage-forge-gold-speed-knobs-compatible-with-epiphone-les-paul-sg-electric-guitar.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/universal-image-data-explorer-forge-for-beginners.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/ai-content-generator.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/universal-image-data-explorer-forge-strategies.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/best-seo-tool.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/universal-image-data-explorer-forge-trends-2026.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/chronoboost-review.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/advanced-universal-image-data-explorer-forge.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/energy-revolution-system-review-how-to-reduce-electricity-bill-at-home-best-alternative-energy-solutions-for-homes.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/best-universal-image-data-explorer-forge-tools.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
   </url>
+
+  <!-- ============================================
+       BLOG — SEO / AI / Trends
+       ============================================ -->
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/neuro-energizer-review.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/ai-trends-2026.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/new-water-offer-smartwaterbox-10-new-vsl-killing-it-.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/e-e-a-t-signals.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/prodentim-review.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/google-updates.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/smart-water-survival-system.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/multi-language-seo.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/the-genius-song.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/programmatic-seo.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
   </url>
+
   <url>
-    <loc>https://universal-image-data-explorer-forge.startknowledge.in/wordpress-hosting.html</loc>
-    <lastmod>2026-09-02T02:40:18.863Z</lastmod>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/semantic-search.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
   </url>
+
+  <url>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/mcp-openai-agents-sdk-how-to-build-a-powerful-ai-agent.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- ============================================
+       BLOG — Miscellaneous / Niche Posts
+       ============================================ -->
+  <url>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/honeywell-forge-now-integrates-universal-weather-and-aviation-services.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/blog/vintage-forge-gold-speed-knobs-compatible-with-epiphone-les-paul-sg-electric-guitar.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <!-- ============================================
+       TOOLS / RESOURCE PAGES
+       ============================================ -->
+  <url>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/ai-content-generator.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/best-seo-tool.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/wordpress-hosting.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.55</priority>
+  </url>
+
+  <url>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/derila-ergo-memory-foam-pillow-review.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.60</priority>
+  </url>
+
+  <!-- ============================================
+       REVIEW / AFFILIATE PAGES
+       ============================================ -->
+  <url>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/chronoboost-review.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/neuro-energizer-review.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/prodentim-review.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/smart-water-survival-system.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/new-water-offer-smartwaterbox-10-new-vsl-killing-it-.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/energy-revolution-system-review-how-to-reduce-electricity-bill-at-home-best-alternative-energy-solutions-for-homes.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.50</priority>
+  </url>
+
+  <url>
+    <loc>https://universalimagedataexplorerforge.startknowledge.in/the-genius-song.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.45</priority>
+  </url>
+
 </urlset>

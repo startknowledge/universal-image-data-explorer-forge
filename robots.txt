@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /google0278c877dab13082.html
+
+Sitemap: https://universalimagedataexplorerforge.startknowledge.in/sitemap.xml
