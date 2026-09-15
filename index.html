@@ -356,440 +356,513 @@
     </div>
 
     <!-- ========== CONVERTER INFORMATION LIBRARY (crawler-friendly) ========== -->
-    <section class="converter-library" id="converterInfoLibrary">
-      <h2 class="section-title">📚 Complete Converter Information Library</h2>
+<section class="converter-library" id="converterInfoLibrary">
+  <details class="library-wrapper">
+    <summary class="section-title library-summary">
+      📚 Complete Converter Information Library
+      <i class="fas fa-chevron-down library-chevron"></i>
+    </summary>
+
+    <div class="library-content">
       <p class="library-intro">
-        Below is the complete reference for all 60+ converters offered by the Universal Image Data Explorer Forge. 
-        Each entry explains the algorithm, the mathematical formula, the output format and typical use cases. 
+        Below is the complete reference for all 60+ converters offered by the Universal Image Data Explorer Forge.
+        Each entry explains the algorithm, the mathematical formula, the output format and typical use cases.
         Click any row to expand. This reference is also available inside the tool as an <strong>(i)</strong> icon next to each converter button.
       </p>
 
       <!-- ===== A. Binary / Low Level ===== -->
-      <h3 class="library-group-title"><i class="fas fa-database"></i> A. Binary / Low Level Data</h3>
+      <details class="library-group">
+        <summary class="library-group-title">
+          <span><i class="fas fa-database"></i> A. Binary / Low Level Data</span>
+          <i class="fas fa-chevron-down group-chevron"></i>
+        </summary>
+        <div class="library-group-body">
 
-      <details class="info-details">
-        <summary>Binary (bits) Converter</summary>
-        <div class="details-body">
-          <p>Converts every pixel of your image into an 8-bit binary string, producing a single, continuous stream of 0s and 1s. Each pixel is first reduced to a weighted grayscale luminance value using the ITU-R BT.601 formula <code>Y = 0.299R + 0.587G + 0.114B</code>, then that value (0–255) is written as eight binary digits.</p>
-          <p><b>Example:</b> a pure white pixel (255) becomes <code>11111111</code>; a pure black pixel (0) becomes <code>00000000</code>; the mid-grey value 170 becomes <code>10101010</code>.</p>
-          <p><b>Typical use cases:</b> teaching binary representation, embedding images inside micro-controller firmware where each bit drives an LED or actuator, testing binary-to-image reconstruction algorithms, and generating test vectors for computer-science exams.</p>
-          <p><b>Output format:</b> a single unbroken string of length <code>width × height × 8</code>. For a 100×100 image you will get 80,000 characters.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Binary (bits) Converter</summary>
+            <div class="details-body">
+              <p>Converts every pixel of your image into an 8-bit binary string, producing a single, continuous stream of 0s and 1s. Each pixel is first reduced to a weighted grayscale luminance value using the ITU-R BT.601 formula <code>Y = 0.299R + 0.587G + 0.114B</code>, then that value (0–255) is written as eight binary digits.</p>
+              <p><b>Example:</b> a pure white pixel (255) becomes <code>11111111</code>; a pure black pixel (0) becomes <code>00000000</code>; the mid-grey value 170 becomes <code>10101010</code>.</p>
+              <p><b>Typical use cases:</b> teaching binary representation, embedding images inside micro-controller firmware where each bit drives an LED or actuator, testing binary-to-image reconstruction algorithms, and generating test vectors for computer-science exams.</p>
+              <p><b>Output format:</b> a single unbroken string of length <code>width × height × 8</code>. For a 100×100 image you will get 80,000 characters.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Hexadecimal Converter</summary>
-        <div class="details-body">
-          <p>Produces a space-separated hex dump of the grayscale byte stream. Each pixel is written as a two-digit lowercase hexadecimal number from <code>00</code> to <code>ff</code>, matching the byte-level layout used by hex editors, debuggers and logic analysers.</p>
-          <p><b>Example:</b> white becomes <code>ff</code>, black becomes <code>00</code>, mid-grey 170 becomes <code>aa</code>.</p>
-          <p><b>Typical use cases:</b> reverse-engineering proprietary image formats, comparing two images byte-by-byte, feeding data into embedded C compilers as a lookup table, and creating visualisation arrays for LED matrices.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Hexadecimal Converter</summary>
+            <div class="details-body">
+              <p>Produces a space-separated hex dump of the grayscale byte stream. Each pixel is written as a two-digit lowercase hexadecimal number from <code>00</code> to <code>ff</code>, matching the byte-level layout used by hex editors, debuggers and logic analysers.</p>
+              <p><b>Example:</b> white becomes <code>ff</code>, black becomes <code>00</code>, mid-grey 170 becomes <code>aa</code>.</p>
+              <p><b>Typical use cases:</b> reverse-engineering proprietary image formats, comparing two images byte-by-byte, feeding data into embedded C compilers as a lookup table, and creating visualisation arrays for LED matrices.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Octal Array Converter</summary>
-        <div class="details-body">
-          <p>Emits the grayscale byte stream as octal numbers (base-8), comma-separated. Octal is rarely used in modern computing but remains a favourite in Unix permissions, legacy PDP-11 systems and some assembly-language tutorials.</p>
-          <p><b>Example:</b> 255 becomes <code>377</code>, 128 becomes <code>200</code>, 64 becomes <code>100</code>.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Octal Array Converter</summary>
+            <div class="details-body">
+              <p>Emits the grayscale byte stream as octal numbers (base-8), comma-separated. Octal is rarely used in modern computing but remains a favourite in Unix permissions, legacy PDP-11 systems and some assembly-language tutorials.</p>
+              <p><b>Example:</b> 255 becomes <code>377</code>, 128 becomes <code>200</code>, 64 becomes <code>100</code>.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Byte Array Converter</summary>
-        <div class="details-body">
-          <p>Wraps the grayscale byte stream inside square brackets as a JavaScript-style array literal: <code>[170,170,170,...]</code>. Every value is a decimal integer between 0 and 255.</p>
-          <p><b>Use cases:</b> pasting directly into a JavaScript console, feeding into WebGL textures, writing JSON configuration files, and testing image-processing functions in Node.js.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Byte Array Converter</summary>
+            <div class="details-body">
+              <p>Wraps the grayscale byte stream inside square brackets as a JavaScript-style array literal: <code>[170,170,170,...]</code>. Every value is a decimal integer between 0 and 255.</p>
+              <p><b>Use cases:</b> pasting directly into a JavaScript console, feeding into WebGL textures, writing JSON configuration files, and testing image-processing functions in Node.js.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Uint8Array Converter</summary>
-        <div class="details-body">
-          <p>Emits a ready-to-use JavaScript <code>Uint8Array</code> constructor call: <code>new Uint8Array([...])</code>. This is the exact object type required by the browser's <code>ImageData</code> API, so you can paste the output directly into the browser console and feed it to <code>ctx.putImageData()</code>.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Uint8Array Converter</summary>
+            <div class="details-body">
+              <p>Emits a ready-to-use JavaScript <code>Uint8Array</code> constructor call: <code>new Uint8Array([...])</code>. This is the exact object type required by the browser's <code>ImageData</code> API, so you can paste the output directly into the browser console and feed it to <code>ctx.putImageData()</code>.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Int16Array Converter</summary>
-        <div class="details-body">
-          <p>Wraps the byte stream in an <code>Int16Array</code> literal. Some algorithms (Sobel, Gaussian blur, convolution) promote pixel values to 16-bit signed integers to prevent overflow during intermediate computations.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Int16Array Converter</summary>
+            <div class="details-body">
+              <p>Wraps the byte stream in an <code>Int16Array</code> literal. Some algorithms (Sobel, Gaussian blur, convolution) promote pixel values to 16-bit signed integers to prevent overflow during intermediate computations.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Int32Array Converter</summary>
-        <div class="details-body">
-          <p>Wraps the byte stream in an <code>Int32Array</code> literal. Used when pixel values are accumulated across multiple passes (histogram equalisation, integral image) and 16-bit is not wide enough.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Int32Array Converter</summary>
+            <div class="details-body">
+              <p>Wraps the byte stream in an <code>Int32Array</code> literal. Used when pixel values are accumulated across multiple passes (histogram equalisation, integral image) and 16-bit is not wide enough.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Float32Array Converter</summary>
-        <div class="details-body">
-          <p>Emits a normalised <code>Float32Array</code> where every pixel value is divided by 255, producing a decimal number between 0.0 and 1.0. This is the format expected by most deep-learning frameworks (TensorFlow.js, PyTorch, ONNX Runtime) when loading image tensors.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Float32Array Converter</summary>
+            <div class="details-body">
+              <p>Emits a normalised <code>Float32Array</code> where every pixel value is divided by 255, producing a decimal number between 0.0 and 1.0. This is the format expected by most deep-learning frameworks (TensorFlow.js, PyTorch, ONNX Runtime) when loading image tensors.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Bit Stream Converter</summary>
-        <div class="details-body">
-          <p>Similar to Binary but without zero-padding — each pixel becomes its shortest binary representation. Useful for compression experiments and for teaching variable-length encoding.</p>
+          <details class="info-details">
+            <summary>Bit Stream Converter</summary>
+            <div class="details-body">
+              <p>Similar to Binary but without zero-padding — each pixel becomes its shortest binary representation. Useful for compression experiments and for teaching variable-length encoding.</p>
+            </div>
+          </details>
+
         </div>
       </details>
 
       <!-- ===== B. Encoding ===== -->
-      <h3 class="library-group-title"><i class="fas fa-code"></i> B. Encoding Formats</h3>
+      <details class="library-group">
+        <summary class="library-group-title">
+          <span><i class="fas fa-code"></i> B. Encoding Formats</span>
+          <i class="fas fa-chevron-down group-chevron"></i>
+        </summary>
+        <div class="library-group-body">
 
-      <details class="info-details">
-        <summary>Base64 Converter</summary>
-        <div class="details-body">
-          <p>Renders the image using the standard RFC 4648 Base64 alphabet (A–Z, a–z, 0–9, +, /) with padding. Base64 is the most common way to embed binary image data inside text-only channels such as JSON, XML, email or HTML attributes.</p>
-          <p><b>Use cases:</b> embedding a small logo directly inside a CSS file, sending an image inside a JWT payload, uploading an image over a text-only API, storing images in localStorage.</p>
-          <p><b>Note:</b> Base64 inflates size by ~33% compared to raw bytes.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Base64 Converter</summary>
+            <div class="details-body">
+              <p>Renders the image using the standard RFC 4648 Base64 alphabet (A–Z, a–z, 0–9, +, /) with padding. Base64 is the most common way to embed binary image data inside text-only channels such as JSON, XML, email or HTML attributes.</p>
+              <p><b>Use cases:</b> embedding a small logo directly inside a CSS file, sending an image inside a JWT payload, uploading an image over a text-only API, storing images in localStorage.</p>
+              <p><b>Note:</b> Base64 inflates size by ~33% compared to raw bytes.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Base32 Converter</summary>
-        <div class="details-body">
-          <p>Encodes the byte stream using RFC 4648 Base32 (A–Z, 2–7). Base32 is case-insensitive and avoids visually ambiguous characters, making it ideal for human transcription — for example two-factor authentication recovery codes, DNS TXT records and product licence keys.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Base32 Converter</summary>
+            <div class="details-body">
+              <p>Encodes the byte stream using RFC 4648 Base32 (A–Z, 2–7). Base32 is case-insensitive and avoids visually ambiguous characters, making it ideal for human transcription — for example two-factor authentication recovery codes, DNS TXT records and product licence keys.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Base85 (Ascii85) Converter</summary>
-        <div class="details-body">
-          <p>Encodes the byte stream using the Ascii85 alphabet used by Adobe PostScript and PDF. Ascii85 is more compact than Base64 — roughly 25% overhead instead of 33%. The output is wrapped in <code>&lt;~</code> … <code>~&gt;</code> markers.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Base85 (Ascii85) Converter</summary>
+            <div class="details-body">
+              <p>Encodes the byte stream using the Ascii85 alphabet used by Adobe PostScript and PDF. Ascii85 is more compact than Base64 — roughly 25% overhead instead of 33%. The output is wrapped in <code>&lt;~</code> … <code>~&gt;</code> markers.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Data URL Converter</summary>
-        <div class="details-body">
-          <p>Produces a complete <code>data:image/png;base64,...</code> URL that can be pasted directly into the browser address bar, an <code>&lt;img src&gt;</code> attribute, or a CSS <code>background-image</code> rule.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Data URL Converter</summary>
+            <div class="details-body">
+              <p>Produces a complete <code>data:image/png;base64,...</code> URL that can be pasted directly into the browser address bar, an <code>&lt;img src&gt;</code> attribute, or a CSS <code>background-image</code> rule.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>URL Encoded Converter</summary>
-        <div class="details-body">
-          <p>Takes the Base64 representation and percent-encodes it using <code>encodeURIComponent</code>, producing a string safe to place inside a query-string parameter.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>URL Encoded Converter</summary>
+            <div class="details-body">
+              <p>Takes the Base64 representation and percent-encodes it using <code>encodeURIComponent</code>, producing a string safe to place inside a query-string parameter.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>ASCII Text Converter</summary>
-        <div class="details-body">
-          <p>Interprets the grayscale byte stream as ASCII characters. Bytes outside the printable range are skipped. Occasionally useful for steganography demonstrations.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>ASCII Text Converter</summary>
+            <div class="details-body">
+              <p>Interprets the grayscale byte stream as ASCII characters. Bytes outside the printable range are skipped. Occasionally useful for steganography demonstrations.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>UTF-8 Text Converter</summary>
-        <div class="details-body">
-          <p>Decodes the grayscale byte stream through a UTF-8 TextDecoder. Invalid byte sequences become the Unicode replacement character. Primarily of interest to students of text encoding.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>UTF-8 Text Converter</summary>
+            <div class="details-body">
+              <p>Decodes the grayscale byte stream through a UTF-8 TextDecoder. Invalid byte sequences become the Unicode replacement character. Primarily of interest to students of text encoding.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>JSON Data Converter</summary>
-        <div class="details-body">
-          <p>Emits a structured JSON document containing the image width, height and full grayscale array. Self-describing, so downstream tools know the geometry without external metadata.</p>
+          <details class="info-details">
+            <summary>JSON Data Converter</summary>
+            <div class="details-body">
+              <p>Emits a structured JSON document containing the image width, height and full grayscale array. Self-describing, so downstream tools know the geometry without external metadata.</p>
+            </div>
+          </details>
+
         </div>
       </details>
 
       <!-- ===== C. Pixel Data ===== -->
-      <h3 class="library-group-title"><i class="fas fa-palette"></i> C. Pixel Data Formats</h3>
+      <details class="library-group">
+        <summary class="library-group-title">
+          <span><i class="fas fa-palette"></i> C. Pixel Data Formats</span>
+          <i class="fas fa-chevron-down group-chevron"></i>
+        </summary>
+        <div class="library-group-body">
 
-      <details class="info-details">
-        <summary>RGB Matrix Converter</summary>
-        <div class="details-body">
-          <p>Produces a nested 2-D array <code>[[[r,g,b],...],...]</code> where each inner triple represents one pixel's red, green and blue channels. The canonical raw format used by OpenCV, Pillow and scikit-image.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>RGB Matrix Converter</summary>
+            <div class="details-body">
+              <p>Produces a nested 2-D array <code>[[[r,g,b],...],...]</code> where each inner triple represents one pixel's red, green and blue channels. The canonical raw format used by OpenCV, Pillow and scikit-image.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>RGBA Matrix Converter</summary>
-        <div class="details-body">
-          <p>Same as RGB Matrix but with a fourth alpha channel: <code>[[[r,g,b,a],...],...]</code>. Alpha is 0 (transparent) to 255 (opaque). Essential for PNG images with transparency.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>RGBA Matrix Converter</summary>
+            <div class="details-body">
+              <p>Same as RGB Matrix but with a fourth alpha channel: <code>[[[r,g,b,a],...],...]</code>. Alpha is 0 (transparent) to 255 (opaque). Essential for PNG images with transparency.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Grayscale Matrix Converter</summary>
-        <div class="details-body">
-          <p>Emits a nested 2-D array of grayscale bytes — the same values used internally by every other converter.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Grayscale Matrix Converter</summary>
+            <div class="details-body">
+              <p>Emits a nested 2-D array of grayscale bytes — the same values used internally by every other converter.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>HSL Matrix Converter</summary>
-        <div class="details-body">
-          <p>Converts every RGB triple into HSL (Hue 0–360°, Saturation 0–100%, Lightness 0–100%). HSL separates colour from brightness, making it intuitive for designers.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>HSL Matrix Converter</summary>
+            <div class="details-body">
+              <p>Converts every RGB triple into HSL (Hue 0–360°, Saturation 0–100%, Lightness 0–100%). HSL separates colour from brightness, making it intuitive for designers.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>HSV Matrix Converter</summary>
-        <div class="details-body">
-          <p>Converts to HSV (Hue, Saturation, Value). HSV is preferred in computer vision because value is independent of hue — illumination changes affect only V. Used by OpenCV's <code>inRange</code> colour segmentation.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>HSV Matrix Converter</summary>
+            <div class="details-body">
+              <p>Converts to HSV (Hue, Saturation, Value). HSV is preferred in computer vision because value is independent of hue — illumination changes affect only V. Used by OpenCV's <code>inRange</code> colour segmentation.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>CMYK Matrix Converter</summary>
-        <div class="details-body">
-          <p>Converts to the subtractive CMYK colour model used in printing (Cyan, Magenta, Yellow, Black; each 0–100%). Useful for prepress analysis.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>CMYK Matrix Converter</summary>
+            <div class="details-body">
+              <p>Converts to the subtractive CMYK colour model used in printing (Cyan, Magenta, Yellow, Black; each 0–100%). Useful for prepress analysis.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>YUV Matrix Converter</summary>
-        <div class="details-body">
-          <p>Converts to YUV, the colour space used in PAL, SECAM and most video-codec pipelines. Y is luminance; U and V are chrominance. Uses ITU-R BT.601 weights with chroma offset by 128.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>YUV Matrix Converter</summary>
+            <div class="details-body">
+              <p>Converts to YUV, the colour space used in PAL, SECAM and most video-codec pipelines. Y is luminance; U and V are chrominance. Uses ITU-R BT.601 weights with chroma offset by 128.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>LAB Color Data Converter</summary>
-        <div class="details-body">
-          <p>Approximates the CIE XYZ colour space, the pre-step to CIELAB. XYZ is device-independent and anchored to the D65 white point. Useful for colour-difference metrics (ΔE).</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>LAB Color Data Converter</summary>
+            <div class="details-body">
+              <p>Approximates the CIE XYZ colour space, the pre-step to CIELAB. XYZ is device-independent and anchored to the D65 white point. Useful for colour-difference metrics (ΔE).</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Color Histogram Converter</summary>
-        <div class="details-body">
-          <p>Emits three 256-bin arrays (one each for R, G, B) counting how often each intensity appears. Foundation of histogram-equalisation contrast enhancement and colour-based image retrieval.</p>
+          <details class="info-details">
+            <summary>Color Histogram Converter</summary>
+            <div class="details-body">
+              <p>Emits three 256-bin arrays (one each for R, G, B) counting how often each intensity appears. Foundation of histogram-equalisation contrast enhancement and colour-based image retrieval.</p>
+            </div>
+          </details>
+
         </div>
       </details>
 
       <!-- ===== D. Programming ===== -->
-      <h3 class="library-group-title"><i class="fas fa-laptop-code"></i> D. Programming Languages</h3>
+      <details class="library-group">
+        <summary class="library-group-title">
+          <span><i class="fas fa-laptop-code"></i> D. Programming Languages</span>
+          <i class="fas fa-chevron-down group-chevron"></i>
+        </summary>
+        <div class="library-group-body">
 
-      <details class="info-details">
-        <summary>C Array (uint8) Converter</summary>
-        <div class="details-body">
-          <p>Emits a ready-to-compile C source line: <code>unsigned char img[N] = { ... };</code>. Drop it into any C or Arduino sketch and draw the image on an OLED or TFT display with a single loop.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>C Array (uint8) Converter</summary>
+            <div class="details-body">
+              <p>Emits a ready-to-compile C source line: <code>unsigned char img[N] = { ... };</code>. Drop it into any C or Arduino sketch and draw the image on an OLED or TFT display with a single loop.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>C++ Array Converter</summary>
-        <div class="details-body">
-          <p>Emits a <code>std::array&lt;unsigned char, N&gt;</code> initialiser, ready for modern C++17 and later. Type-safe and constexpr-friendly.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>C++ Array Converter</summary>
+            <div class="details-body">
+              <p>Emits a <code>std::array&lt;unsigned char, N&gt;</code> initialiser, ready for modern C++17 and later. Type-safe and constexpr-friendly.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Python Bytes Converter</summary>
-        <div class="details-body">
-          <p>Emits <code>img_bytes = bytes([...])</code>, ready to paste into a Python script. Feed it to <code>numpy.frombuffer()</code> or write it to disk with <code>open("out.raw","wb").write(img_bytes)</code>.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Python Bytes Converter</summary>
+            <div class="details-body">
+              <p>Emits <code>img_bytes = bytes([...])</code>, ready to paste into a Python script. Feed it to <code>numpy.frombuffer()</code> or write it to disk with <code>open("out.raw","wb").write(img_bytes)</code>.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Java byte[] Converter</summary>
-        <div class="details-body">
-          <p>Emits <code>byte[] imgData = { ... };</code>. Java bytes are signed, so values above 127 appear as negatives — use <code>&amp; 0xFF</code> when reading back.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Java byte[] Converter</summary>
+            <div class="details-body">
+              <p>Emits <code>byte[] imgData = { ... };</code>. Java bytes are signed, so values above 127 appear as negatives — use <code>&amp; 0xFF</code> when reading back.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Go Byte Slice Converter</summary>
-        <div class="details-body">
-          <p>Emits <code>img := []byte{...}</code>, ready for <code>image.NewGray</code> or direct pixel rendering in Go.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Go Byte Slice Converter</summary>
+            <div class="details-body">
+              <p>Emits <code>img := []byte{...}</code>, ready for <code>image.NewGray</code> or direct pixel rendering in Go.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Rust Byte Array Converter</summary>
-        <div class="details-body">
-          <p>Emits <code>let img: [u8; N] = [...];</code>. Const-usable inside <code>const</code> or <code>static</code> blocks in embedded Rust (<code>no_std</code>).</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Rust Byte Array Converter</summary>
+            <div class="details-body">
+              <p>Emits <code>let img: [u8; N] = [...];</code>. Const-usable inside <code>const</code> or <code>static</code> blocks in embedded Rust (<code>no_std</code>).</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>JavaScript Buffer Converter</summary>
-        <div class="details-body">
-          <p>Emits <code>Buffer.from([...])</code> for Node.js. Works in Electron and browsers via Buffer polyfill. Ideal for server-side image manipulation with sharp or jimp.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>JavaScript Buffer Converter</summary>
+            <div class="details-body">
+              <p>Emits <code>Buffer.from([...])</code> for Node.js. Works in Electron and browsers via Buffer polyfill. Ideal for server-side image manipulation with sharp or jimp.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>PHP Binary String Converter</summary>
-        <div class="details-body">
-          <p>Emits a PHP double-quoted string containing the raw bytes, ready for <code>imagecreatefromstring()</code>.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>PHP Binary String Converter</summary>
+            <div class="details-body">
+              <p>Emits a PHP double-quoted string containing the raw bytes, ready for <code>imagecreatefromstring()</code>.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Swift Data Converter</summary>
-        <div class="details-body">
-          <p>Emits <code>Data([...])</code>, ready to feed into <code>UIImage(data:)</code> on iOS or macOS.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Swift Data Converter</summary>
+            <div class="details-body">
+              <p>Emits <code>Data([...])</code>, ready to feed into <code>UIImage(data:)</code> on iOS or macOS.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Kotlin ByteArray Converter</summary>
-        <div class="details-body">
-          <p>Emits <code>byteArrayOf(...)</code>, ready for Android's <code>BitmapFactory.decodeByteArray</code>.</p>
+          <details class="info-details">
+            <summary>Kotlin ByteArray Converter</summary>
+            <div class="details-body">
+              <p>Emits <code>byteArrayOf(...)</code>, ready for Android's <code>BitmapFactory.decodeByteArray</code>.</p>
+            </div>
+          </details>
+
         </div>
       </details>
 
       <!-- ===== E. Visualization ===== -->
-      <h3 class="library-group-title"><i class="fas fa-chart-simple"></i> E. Visualization Formats</h3>
+      <details class="library-group">
+        <summary class="library-group-title">
+          <span><i class="fas fa-chart-simple"></i> E. Visualization Formats</span>
+          <i class="fas fa-chevron-down group-chevron"></i>
+        </summary>
+        <div class="library-group-body">
 
-      <details class="info-details">
-        <summary>ASCII Art Converter</summary>
-        <div class="details-body">
-          <p>Renders the image using 10 ASCII characters ranked by darkness (<code>@%#*+=-:. </code>). Sampled every two rows to compensate for tall terminal fonts.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>ASCII Art Converter</summary>
+            <div class="details-body">
+              <p>Renders the image using 10 ASCII characters ranked by darkness (<code>@%#*+=-:. </code>). Sampled every two rows to compensate for tall terminal fonts.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Braille Art Converter</summary>
-        <div class="details-body">
-          <p>Uses Unicode Braille patterns (U+2800–U+28FF) to render 2×4 pixel blocks per character — 8× denser than ASCII art. Excellent for high-resolution terminal previews.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Braille Art Converter</summary>
+            <div class="details-body">
+              <p>Uses Unicode Braille patterns (U+2800–U+28FF) to render 2×4 pixel blocks per character — 8× denser than ASCII art. Excellent for high-resolution terminal previews.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Block Art Converter</summary>
-        <div class="details-body">
-          <p>Uses Unicode block-drawing characters (▘▝▀▖▌▞▛▗▚▐▜▄▙▟█) to render 2 pixels per character — smoother than pure ASCII.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Block Art Converter</summary>
+            <div class="details-body">
+              <p>Uses Unicode block-drawing characters (▘▝▀▖▌▞▛▗▚▐▜▄▙▟█) to render 2 pixels per character — smoother than pure ASCII.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Emoji Art Converter</summary>
-        <div class="details-body">
-          <p>Maps each pixel to one of eight coloured emoji (⚫🔴🟠🟡🟢🔵🟣⚪) based on hue and brightness. Great for sharing playful previews on chat apps.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Emoji Art Converter</summary>
+            <div class="details-body">
+              <p>Maps each pixel to one of eight coloured emoji (⚫🔴🟠🟡🟢🔵🟣⚪) based on hue and brightness. Great for sharing playful previews on chat apps.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Pixel Grid Converter</summary>
-        <div class="details-body">
-          <p>Emits a black-and-white grid using ⬛ and ⬜ characters, thresholded at 128. Truncated to the top-left 40×20 region for readability.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Pixel Grid Converter</summary>
+            <div class="details-body">
+              <p>Emits a black-and-white grid using ⬛ and ⬜ characters, thresholded at 128. Truncated to the top-left 40×20 region for readability.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Heatmap (ASCII) Converter</summary>
-        <div class="details-body">
-          <p>Uses shading characters (░▒▓█) to render brightness as apparent density — useful for quickly eyeballing exposure problems.</p>
+          <details class="info-details">
+            <summary>Heatmap (ASCII) Converter</summary>
+            <div class="details-body">
+              <p>Uses shading characters (░▒▓█) to render brightness as apparent density — useful for quickly eyeballing exposure problems.</p>
+            </div>
+          </details>
+
         </div>
       </details>
 
       <!-- ===== F. Compression / Security ===== -->
-      <h3 class="library-group-title"><i class="fas fa-shield-halved"></i> F. Compression / Security</h3>
+      <details class="library-group">
+        <summary class="library-group-title">
+          <span><i class="fas fa-shield-halved"></i> F. Compression / Security</span>
+          <i class="fas fa-chevron-down group-chevron"></i>
+        </summary>
+        <div class="library-group-body">
 
-      <details class="info-details">
-        <summary>Run Length Encoding Converter</summary>
-        <div class="details-body">
-          <p>Emits <code>[[value, count], ...]</code> pairs, compressing consecutive identical pixels. RLE is the simplest lossless compression and was used in early PCX, BMP and TIFF formats.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Run Length Encoding Converter</summary>
+            <div class="details-body">
+              <p>Emits <code>[[value, count], ...]</code> pairs, compressing consecutive identical pixels. RLE is the simplest lossless compression and was used in early PCX, BMP and TIFF formats.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Delta Encoded Pixels Converter</summary>
-        <div class="details-body">
-          <p>Stores the first pixel as-is and every subsequent pixel as the signed difference from its predecessor. Reduces entropy for smooth-gradient images — often 2× better than raw.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Delta Encoded Pixels Converter</summary>
+            <div class="details-body">
+              <p>Stores the first pixel as-is and every subsequent pixel as the signed difference from its predecessor. Reduces entropy for smooth-gradient images — often 2× better than raw.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>MD5 Hash Converter</summary>
-        <div class="details-body">
-          <p>Computes the 128-bit MD5 message digest of the grayscale byte stream using the Web Crypto API. Output is 32 hex characters.</p>
-          <p><b>Note:</b> MD5 is cryptographically broken for adversarial use but fine for non-adversarial fingerprinting and cache keys.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>MD5 Hash Converter</summary>
+            <div class="details-body">
+              <p>Computes the 128-bit MD5 message digest of the grayscale byte stream using the Web Crypto API. Output is 32 hex characters.</p>
+              <p><b>Note:</b> MD5 is cryptographically broken for adversarial use but fine for non-adversarial fingerprinting and cache keys.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>SHA1 Hash Converter</summary>
-        <div class="details-body">
-          <p>Computes the 160-bit SHA-1 digest, output as 40 hex characters. Deprecated for cryptographic signatures but still used in Git object IDs.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>SHA1 Hash Converter</summary>
+            <div class="details-body">
+              <p>Computes the 160-bit SHA-1 digest, output as 40 hex characters. Deprecated for cryptographic signatures but still used in Git object IDs.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>SHA256 Hash Converter</summary>
-        <div class="details-body">
-          <p>Computes the 256-bit SHA-256 digest, output as 64 hex characters. The recommended hash for integrity checks, digital signatures and blockchain anchoring.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>SHA256 Hash Converter</summary>
+            <div class="details-body">
+              <p>Computes the 256-bit SHA-256 digest, output as 64 hex characters. The recommended hash for integrity checks, digital signatures and blockchain anchoring.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>CRC32 Checksum Converter</summary>
-        <div class="details-body">
-          <p>Computes the IEEE 802.3 CRC-32 checksum, output as 8 hex characters. Used inside ZIP, PNG and Gzip for detecting accidental corruption.</p>
+          <details class="info-details">
+            <summary>CRC32 Checksum Converter</summary>
+            <div class="details-body">
+              <p>Computes the IEEE 802.3 CRC-32 checksum, output as 8 hex characters. Used inside ZIP, PNG and Gzip for detecting accidental corruption.</p>
+            </div>
+          </details>
+
         </div>
       </details>
 
       <!-- ===== G. AI / Data Science ===== -->
-      <h3 class="library-group-title"><i class="fas fa-brain"></i> G. AI / Data Science</h3>
+      <details class="library-group">
+        <summary class="library-group-title">
+          <span><i class="fas fa-brain"></i> G. AI / Data Science</span>
+          <i class="fas fa-chevron-down group-chevron"></i>
+        </summary>
+        <div class="library-group-body">
 
-      <details class="info-details">
-        <summary>NumPy Array Converter</summary>
-        <div class="details-body">
-          <p>Emits <code>np.array([...]).reshape(H, W)</code>, ready to paste into a Jupyter notebook. The reshape makes the 1-D byte stream into a 2-D matrix matching the original geometry.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>NumPy Array Converter</summary>
+            <div class="details-body">
+              <p>Emits <code>np.array([...]).reshape(H, W)</code>, ready to paste into a Jupyter notebook. The reshape makes the 1-D byte stream into a 2-D matrix matching the original geometry.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>TensorFlow Tensor Converter</summary>
-        <div class="details-body">
-          <p>Emits <code>tf.tensor([...], [H, W, 1])</code>, ready for TensorFlow.js or Python TensorFlow. The trailing 1 is the channel dimension (grayscale).</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>TensorFlow Tensor Converter</summary>
+            <div class="details-body">
+              <p>Emits <code>tf.tensor([...], [H, W, 1])</code>, ready for TensorFlow.js or Python TensorFlow. The trailing 1 is the channel dimension (grayscale).</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>CSV Pixel Data Converter</summary>
-        <div class="details-body">
-          <p>Emits one row per pixel in the format <code>x,y,value</code>. Ready to import into Excel, Google Sheets, R or pandas <code>read_csv()</code>.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>CSV Pixel Data Converter</summary>
+            <div class="details-body">
+              <p>Emits one row per pixel in the format <code>x,y,value</code>. Ready to import into Excel, Google Sheets, R or pandas <code>read_csv()</code>.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Pandas DataFrame Converter</summary>
-        <div class="details-body">
-          <p>Emits a Python <code>pd.DataFrame(...)</code> constructor producing a long-format table with columns <code>pixel</code>, <code>x</code>, <code>y</code>. Ideal for exploratory data analysis.</p>
-        </div>
-      </details>
+          <details class="info-details">
+            <summary>Pandas DataFrame Converter</summary>
+            <div class="details-body">
+              <p>Emits a Python <code>pd.DataFrame(...)</code> constructor producing a long-format table with columns <code>pixel</code>, <code>x</code>, <code>y</code>. Ideal for exploratory data analysis.</p>
+            </div>
+          </details>
 
-      <details class="info-details">
-        <summary>Feature Vector Converter</summary>
-        <div class="details-body">
-          <p>Emits a plain 1-D array of grayscale values — the simplest feature vector for classical ML classifiers (SVM, k-NN, random forest) applied to image data.</p>
+          <details class="info-details">
+            <summary>Feature Vector Converter</summary>
+            <div class="details-body">
+              <p>Emits a plain 1-D array of grayscale values — the simplest feature vector for classical ML classifiers (SVM, k-NN, random forest) applied to image data.</p>
+            </div>
+          </details>
+
         </div>
       </details>
 
       <!-- ===== H. Web ===== -->
-      <h3 class="library-group-title"><i class="fas fa-globe"></i> H. Web / Browser Formats</h3>
+      <details class="library-group">
+        <summary class="library-group-title">
+          <span><i class="fas fa-globe"></i> H. Web / Browser Formats</span>
+          <i class="fas fa-chevron-down group-chevron"></i>
+        </summary>
+        <div class="library-group-body">
 
-      <details class="info-details">
-        <summary>SVG Trace (basic) Converter</summary>
-        <div class="details-body">
-          <p>Generates an SVG document in which every pixel becomes a 1×1 <code>&lt;rect&gt;</code>. A "raster-to-vector" trace limited to small images (≤ 2,500 pixels) because file size grows quadratically.</p>
+          <details class="info-details">
+            <summary>SVG Trace (basic) Converter</summary>
+            <div class="details-body">
+              <p>Generates an SVG document in which every pixel becomes a 1×1 <code>&lt;rect&gt;</code>. A "raster-to-vector" trace limited to small images (≤ 2,500 pixels) because file size grows quadratically.</p>
+            </div>
+          </details>
+
+          <details class="info-details">
+            <summary>CSS Data URI Converter</summary>
+            <div class="details-body">
+              <p>Emits a ready-to-paste CSS rule: <code>background-image: url('data:image/png;base64,...');</code>. Drop it inside a stylesheet to embed the image without a separate file request.</p>
+            </div>
+          </details>
+
+          <details class="info-details">
+            <summary>Canvas ImageData Converter</summary>
+            <div class="details-body">
+              <p>Emits a <code>ctx.putImageData(...)</code> call containing the full RGBA byte stream. Limited to images under 10,000 pixels because raw RGBA is 4× the size of grayscale.</p>
+            </div>
+          </details>
+
         </div>
       </details>
 
-      <details class="info-details">
-        <summary>CSS Data URI Converter</summary>
-        <div class="details-body">
-          <p>Emits a ready-to-paste CSS rule: <code>background-image: url('data:image/png;base64,...');</code>. Drop it inside a stylesheet to embed the image without a separate file request.</p>
-        </div>
-      </details>
-
-      <details class="info-details">
-        <summary>Canvas ImageData Converter</summary>
-        <div class="details-body">
-          <p>Emits a <code>ctx.putImageData(...)</code> call containing the full RGBA byte stream. Limited to images under 10,000 pixels because raw RGBA is 4× the size of grayscale.</p>
-        </div>
-      </details>
-    </section>
+    </div>
+  </details>
+</section>
 
     <footer class="footer-custom">
       <div class="footer-grid">
